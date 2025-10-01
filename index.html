@@ -241,6 +241,11 @@
           }
         });
       }
+      // ✅ Step 1: Remove duplicate words
+gameWords = gameWords.filter((v, i, a) => a.findIndex(t => t.word === v.word) === i);
+
+// ✅ Step 2: Remove duplicate answers
+allAnswers = [...new Set(allAnswers)];
 
       shuffle(gameWords);
       startPage.classList.add("hidden");
@@ -337,4 +342,5 @@
   </script>
 </body>
 </html>
+
 
